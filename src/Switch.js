@@ -1,9 +1,13 @@
 import React from 'react';
+import {LightContext} from './LightContext';
 
 function Switch() {
   return (
     <div>
-      switch
+      <LightContext.Consumer>
+        <button onClick={this.state.toggleSwitch}>
+        </button>
+      </LightContext.Consumer>
     </div>
   )
 }

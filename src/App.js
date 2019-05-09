@@ -5,18 +5,20 @@ import {LightContext} from './LightContext';
 
 class App extends Component {
   state = {
-
-  }
-
-  toggleSwitch = () => {
-    
+    on: true,
+    toggleSwitch: () => {
+      this.setState({
+        on: !this.state.on
+      })
+    }
   }
 
   render () {
     return (
-      <div>
-
-      </div>
+      <LightContext.Provider value={this.state}>
+        <Bulb />
+        <Switch />
+      </LightContext.Provider>
     )
   }
 }
